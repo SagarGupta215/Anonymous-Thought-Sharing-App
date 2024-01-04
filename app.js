@@ -27,7 +27,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://127.0.0.1:27017/userDB", { useNewUrlParser: true }).then(function (res) {
+mongoose.connect(process.env.DATABASE_URI, { useNewUrlParser: true }).then(function (res) {
     console.log('Connected to Database');
 }).catch(function (err) {
     console.log(err);
